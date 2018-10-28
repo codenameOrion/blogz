@@ -29,11 +29,11 @@ def index():
     
         separate_entry = Blog.query.filter_by(id = blog_id).all()
         print(separate_entry)
-        return render_template('blog.html', blog=separate_entry)
+        return render_template('blog.html', blogs=separate_entry)
 
     blogs = Blog.query.all()
     blog_entries = Blog.query.all()
-    return render_template('blog.html',title="Build-a-blog!", 
+    return render_template('blog.html',title="Build-a-blog", 
         blogs=blogs)
         
 
@@ -60,7 +60,7 @@ def addpost():
         
         return redirect('/')
 
-    return render_template('newpost.html', pagetitle='Add a blog')
+    return render_template('newpost.html')
 
 if __name__ == '__main__':
     app.run()
