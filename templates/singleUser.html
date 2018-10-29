@@ -3,8 +3,7 @@
 {% block content %}
 
 
-
-<h1>Blogs</h1>
+<h1>{{ title }}</h1>
 
 {% if blogs|length == 0 and blog|length == 0 %}
     <p>No Blog posts yet</p>
@@ -14,9 +13,7 @@
     <p><a href="/?id={{ blog.id }}">{{ blog.title }}</a></p>
     
     <p>{{ blog.body }}</p>
-    <p>Post by:<a href='/blog?user={{ blog.owner_id }}'>{{ blog.owner.username }}</a></p>
     {% endfor %}
-
 
 
 {% endblock %}
